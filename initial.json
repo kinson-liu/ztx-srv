@@ -1,0 +1,437 @@
+[
+  {
+    "model": "rbac.user",
+    "pk": 1,
+    "fields": {
+      "name":"LDAP管理员",
+      "username":"admin",
+      "password":"pbkdf2_sha256$180000$snVRxNslmoLo$uL1w4OkAQuTak5NDK6DV/fRtsjuwAWbsLDelJ7kJfLw=",
+      "email":"admin@ladp.com.cn"
+    }
+  },
+  {
+    "model": "rbac.role",
+    "pk": 1,
+    "fields": {
+      "name":"管理员",
+      "datas":"仅本人",
+      "description":"管理员",
+      "create_time":"2020-01-01 00:00:00",
+      "update_time":"2020-01-01 00:00:00"
+    }
+  },
+  {
+    "model": "rbac.user_roles",
+    "pk": 1,
+    "fields": {
+      "user_id":"1",
+      "role_id":"1"
+    }
+  },
+  {
+    "model": "rbac.organization",
+    "pk": 1,
+    "fields": {
+      "name":"Gopay",
+      "type":"公司",
+      "create_time":"2020-01-01 00:00:00",
+      "update_time":"2020-01-01 00:00:00"
+    }
+  },
+
+  {
+    "model": "rbac.permission",
+    "pk": 1,
+    "fields": {
+      "create_time": "2020-01-01 00:00:00",
+      "update_time": "2020-01-01 00:00:00",
+      "is_deleted": 0,
+      "name": "访问控制平台",
+      "type": "平台",
+      "is_frame": 0,
+      "sort": 1,
+      "method": "platform_rbac"
+    }
+  },  
+  {
+    "model": "rbac.permission",
+    "pk": 2,
+    "fields": {
+      "create_time": "2020-01-01 00:00:00",
+      "update_time": "2020-01-01 00:00:00",
+      "is_deleted": 0,
+      "name": "系统管理",
+      "type": "目录",
+      "is_frame": 0,
+      "sort": 1,
+      "method": "system_manage",
+      "parent_id": 1
+    }
+  },
+  {
+    "model": "rbac.permission",
+    "pk": 3,
+    "fields": {
+      "create_time": "2020-01-01 00:00:00",
+      "update_time": "2020-01-01 00:00:00",
+      "is_deleted": 0,
+      "name": "用户管理",
+      "type": "菜单",
+      "is_frame": 0,
+      "sort": 1,
+      "method": "user_manage",
+      "parent_id": 2
+    }
+  },
+  {
+    "model": "rbac.permission",
+    "pk": 4,
+    "fields": {
+      "create_time": "2020-01-01 00:00:00",
+      "update_time": "2020-01-01 00:00:00",
+      "is_deleted": 0,
+      "name": "部门管理",
+      "type": "菜单",
+      "is_frame": 0,
+      "sort": 2,
+      "method": "org_manage",
+      "parent_id": 2
+    }
+  },
+  {
+    "model": "rbac.permission",
+    "pk": 5,
+    "fields": {
+      "create_time": "2020-01-01 00:00:00",
+      "update_time": "2020-01-01 00:00:00",
+      "is_deleted": 0,
+      "name": "角色管理",
+      "type": "菜单",
+      "is_frame": 0,
+      "sort": 3,
+      "method": "role_manage",
+      "parent_id": 2
+    }
+  },
+  {
+    "model": "rbac.permission",
+    "pk": 6,
+    "fields": {
+      "create_time": "2020-01-01 00:00:00",
+      "update_time": "2020-01-01 00:00:00",
+      "is_deleted": 0,
+      "name": "权限菜单",
+      "type": "菜单",
+      "is_frame": 0,
+      "sort": 4,
+      "method": "perm_manage",
+      "parent_id": 2
+    }
+  },
+  {
+    "pk": 7,
+    "model": "rbac.permission",
+    "fields": {
+      "create_time": "2020-01-01 00:00:00",
+      "update_time": "2020-01-01 00:00:00",
+      "is_deleted": 0,
+      "name": "新增用户",
+      "type": "接口",
+      "is_frame": 0,
+      "sort": 1,
+      "method": "user_create",
+      "parent_id": 3
+    }
+  },
+  {
+    "model": "rbac.permission",
+    "pk": 8,
+    "fields": {
+      "create_time": "2020-01-01 00:00:00",
+      "update_time": "2020-01-01 00:00:00",
+      "is_deleted": 0,
+      "name": "编辑用户",
+      "type": "接口",
+      "is_frame": 0,
+      "sort": 2,
+      "method": "user_update",
+      "parent_id": 3
+    }
+  },
+  {
+    "model": "rbac.permission",
+    "pk": 9,
+    "fields": {
+      "create_time": "2020-01-01 00:00:00",
+      "update_time": "2020-01-01 00:00:00",
+      "is_deleted": 0,
+      "name": "删除用户",
+      "type": "接口",
+      "is_frame": 0,
+      "sort": 3,
+      "method": "user_delete",
+      "parent_id": 3
+    }
+  },
+  {
+    "model": "rbac.permission",
+    "pk": 10,
+    "fields": {
+      "create_time": "2020-01-01 00:00:00",
+      "update_time": "2020-01-01 00:00:00",
+      "is_deleted": 0,
+      "name": "新增部门",
+      "type": "接口",
+      "is_frame": 0,
+      "sort": 1,
+      "method": "org_create",
+      "parent_id": 4
+    }
+  },
+  {
+    "model": "rbac.permission",
+    "pk": 11,
+    "fields": {
+      "create_time": "2020-01-01 00:00:00",
+      "update_time": "2020-01-01 00:00:00",
+      "is_deleted": 0,
+      "name": "编辑部门",
+      "type": "接口",
+      "is_frame": 0,
+      "sort": 2,
+      "method": "org_update",
+      "parent_id": 4
+    }
+  },
+  {
+    "model": "rbac.permission",
+    "pk": 12,
+    "fields": {
+      "create_time": "2020-01-01 00:00:00",
+      "update_time": "2020-01-01 00:00:00",
+      "is_deleted": 0,
+      "name": "删除部门",
+      "type": "接口",
+      "is_frame": 0,
+      "sort": 3,
+      "method": "org_delete",
+      "parent_id":4
+    }
+  },
+  {
+    "model": "rbac.permission",
+    "pk": 13,
+    "fields": {
+      "create_time": "2020-01-01 00:00:00",
+      "update_time": "2020-01-01 00:00:00",
+      "is_deleted": 0,
+      "name": "新建角色",
+      "type": "接口",
+      "is_frame": 0,
+      "sort": 1,
+      "method": "role_create",
+      "parent_id": 5
+    }
+  },
+  {
+    "model": "rbac.permission",
+    "pk": 14,
+    "fields": {
+      "create_time": "2020-01-01 00:00:00",
+      "update_time": "2020-01-01 00:00:00",
+      "is_deleted": 0,
+      "name": "编辑角色",
+      "type": "接口",
+      "is_frame": 0,
+      "sort": 2,
+      "method": "role_update",
+      "parent_id": 5
+    }
+  },
+  {
+    "model": "rbac.permission",
+    "pk": 15,
+    "fields": {
+      "create_time": "2020-01-01 00:00:00",
+      "update_time": "2020-01-01 00:00:00",
+      "is_deleted": 0,
+      "name": "删除角色",
+      "type": "接口",
+      "is_frame": 0,
+      "sort": 3,
+      "method": "role_delete",
+      "parent_id": 5
+    }
+  },
+  {
+    "model": "rbac.permission",
+    "pk": 16,
+    "fields": {
+      "create_time": "2020-01-01 00:00:00",
+      "update_time": "2020-01-01 00:00:00",
+      "is_deleted": 0,
+      "name": "新建权限",
+      "type": "接口",
+      "is_frame": 0,
+      "sort": 1,
+      "method": "perm_create",
+      "parent_id": 6
+    }
+  },
+  {
+    "model": "rbac.permission",
+    "pk": 17,
+    "fields": {
+      "create_time": "2020-01-01 00:00:00",
+      "update_time": "2020-01-01 00:00:00",
+      "is_deleted": 0,
+      "name": "编辑权限",
+      "type": "接口",
+      "is_frame": 0,
+      "sort": 2,
+      "method": "perm_update",
+      "parent_id": 6
+    }
+  },
+  {
+    "model": "rbac.permission",
+    "pk": 18,
+    "fields": {
+      "create_time": "2020-01-01 00:00:00",
+      "update_time": "2020-01-01 00:00:00",
+      "is_deleted": 0,
+      "name": "删除权限",
+      "type": "接口",
+      "is_frame": 0,
+      "sort": 3,
+      "method": "perm_delete",
+      "parent_id": 6
+    }
+  },
+  {
+    "model": "rbac.role_perms",
+    "fields": {
+      "role_id": 1,
+      "permission_id": 1
+    }
+  },
+  {
+    "model": "rbac.role_perms",
+    "fields": {
+      "role_id": 1,
+      "permission_id": 2
+    }
+  },
+  {
+    "model": "rbac.role_perms",
+    "fields": {
+      "role_id": 1,
+      "permission_id": 3
+    }
+  },
+  {
+    "model": "rbac.role_perms",
+    "fields": {
+      "role_id": 1,
+      "permission_id": 4
+    }
+  },
+  {
+    "model": "rbac.role_perms",
+    "fields": {
+      "role_id": 1,
+      "permission_id": 5
+    }
+  },
+  {
+    "model": "rbac.role_perms",
+    "fields": {
+      "role_id": 1,
+      "permission_id": 6
+    }
+  },
+  {
+    "model": "rbac.role_perms",
+    "fields": {
+      "role_id": 1,
+      "permission_id": 7
+    }
+  },
+  {
+    "model": "rbac.role_perms",
+    "fields": {
+      "role_id": 1,
+      "permission_id": 8
+    }
+  },
+  {
+    "model": "rbac.role_perms",
+    "fields": {
+      "role_id": 1,
+      "permission_id": 9
+    }
+  },
+  {
+    "model": "rbac.role_perms",
+    "fields": {
+      "role_id": 1,
+      "permission_id": 10
+    }
+  },
+  {
+    "model": "rbac.role_perms",
+    "fields": {
+      "role_id": 1,
+      "permission_id": 11
+    }
+  },
+  {
+    "model": "rbac.role_perms",
+    "fields": {
+      "role_id": 1,
+      "permission_id": 12
+    }
+  },
+  {
+    "model": "rbac.role_perms",
+    "fields": {
+      "role_id": 1,
+      "permission_id": 13
+    }
+  },
+  {
+    "model": "rbac.role_perms",
+    "fields": {
+      "role_id": 1,
+      "permission_id": 14
+    }
+  },
+  {
+    "model": "rbac.role_perms",
+    "fields": {
+      "role_id": 1,
+      "permission_id": 15
+    }
+  },
+  {
+    "model": "rbac.role_perms",
+    "fields": {
+      "role_id": 1,
+      "permission_id": 16
+    }
+  },
+  {
+    "model": "rbac.role_perms",
+    "fields": {
+      "role_id": 1,
+      "permission_id": 17
+    }
+  },
+  {
+    "model": "rbac.role_perms",
+    "fields": {
+      "role_id": 1,
+      "permission_id": 18
+    }
+  }
+]
